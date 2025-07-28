@@ -1,0 +1,102 @@
+/* Body styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #1c92d2, #f2fcfe);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Container */
+.container {
+  text-align: center;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 90%;
+}
+
+/* Status and title */
+h1 {
+  margin-bottom: 10px;
+}
+#status {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Game board */
+.board {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+/* Cells */
+.cell {
+  width: 100px;
+  height: 100px;
+  background: #f1f1f1;
+  font-size: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 10px;
+  transition: background 0.2s;
+}
+
+.cell:hover {
+  background: #e0e0e0;
+}
+
+/* Winning Line - Clean glowing animation */
+#winning-line {
+  position: absolute;
+  height: 4px;
+  background: rgb(16, 77, 16);
+  width: 0;
+  top: 0;
+  left: 0;
+  transform-origin: left center;
+  transform: scaleX(0) rotate(0deg);
+  opacity: 0;
+  border-radius: 2px;
+  box-shadow: 0 0 12px 4px rgba(255, 255, 255, 0.6);
+  transition: all 0.5s ease-in-out;
+  z-index: 1;
+}
+
+/* Reset Button */
+#reset {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  background: #1c92d2;
+  color: rgb(0, 5, 1);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#reset:hover {
+  background: #0d6efd;
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+}
